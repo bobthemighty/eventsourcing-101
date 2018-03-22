@@ -1,53 +1,37 @@
+# flake8: NOQA
+# pylint: disable=unused-import
+import uuid
 from collections import Counter
-from bson.objectid import ObjectId
+from typing import NamedTuple
+
 from pymongo import MongoClient
+
+from mongobasket.aggregate import Aggregate, applies
+from mongobasket import events
+
+from .util import print_basket
 
 client = MongoClient()
 db = client.basket_db
 
 
-class Basket:
+class BasketCreated(NamedTuple):
+    basket_id: uuid.UUID
 
-    def __init__(self, basket_id=None, items=None):
-        self.__values = Counter(items)
-        self.id = basket_id
 
-    def add_item(self, product, qty=1):
-        self.__values[product] += qty
+class Basket(Aggregate):
 
-    def remove(self, product):
-        if not product in self.__values:
-            raise KeyError(product)
-        del self.__values[product]
+    def __init__(self, events=None):
+        self.id = "EMPTY"
+        super().__init__(events)
 
-    def __getitem__(self, product):
-        return self.__values[product]
+    # Deciders
 
-    def is_empty(self):
-        return not any(self.__values)
+    # Appliers
 
-    def save(self):
-        data = dict(self.__values)
-
-        if not self.id:
-            _id = ObjectId()
-            data['_id'] = _id
-            db.baskets.insert_one(data)
-            self.id = _id
-
-        else:
-            data['_id'] = self.id
-            db.baskets.update({"_id": self.id}, data)
-
-    @classmethod
-    def get(cls, basket_id):
-        _id = ObjectId(basket_id)
-        data = db.baskets.find_one(_id)
-        del data ['_id']
-        return cls(basket_id=_id, items=data)
+    # View methods
 
     def __str__(self):
-        return "\n".join((
-            f"{product} = {qty}"
-            for product, qty in self.__values.items()
-        ))
+        return print_basket(self)
+
+    # Data Access
