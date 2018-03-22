@@ -69,7 +69,7 @@ class Aggregate(metaclass=EventRegistry):
         else:
             logging.warning("no handler found")
 
-    def write_event(self, e):
+    def raise_event(self, e):
         self.events.append(e)
         self.new_events.append(e)
         self.apply(e)
