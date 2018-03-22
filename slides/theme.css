@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+body { font-family: 'Droid Serif';}
+.remark-slide-content {
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain; 
+background-color: #272822; color: #f8f8f2;  }
+h1 {
+color: #FD971F;
+}
+h1, h2, h3 {
+font-family: 'Yanone Kaffeesatz';
+font-weight: normal;
+
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code-line-highlighted { background-color: #524F52 }
+
+.question {
+vertical-align: middle;
+text-align: left;
+}
+
+.question h1, .question h2 {
+font-size: 5em;
+max-width: 70%;
+}
+
+.question strong {
+        color: #f92672;
+}
+
+.light {
+      color: #ABAA98;
+}
+
+.medium, h2 {
+      color: #F9F5C2;
+}
+
+.important {
+      color: #00B9d7;
+}
+
+.definition { text-align: justify; margin-top: 20%; font-size: 2em;}
+.definition span { display: block; }
+
+.fullscreen-image {
+}
+
+a { color: #ABAA98; }
