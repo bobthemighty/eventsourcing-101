@@ -2,7 +2,7 @@
 def print_basket(basket):
 
     item_list = "\n".join(
-        (f"\t* {product}: {qty}" for product, qty in basket._values.items())
+        (f"\t* {product}: {qty}" for product, qty in basket.items.items())
     )
     event_list = "\n".join((f"\t* {e}" for e in basket.events))
 
