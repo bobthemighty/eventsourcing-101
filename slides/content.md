@@ -318,16 +318,16 @@ class: code-slide
 ```terminal
 bob@localhost ~/code/made/very-important-project $ git rebase HEAD~10
 
-pick   508bea9 Replacing orders stream with ce-order
-squash 7ba9da9 Updated order_placed event reader to handle non-uk orders. lulz
-fixup  f63c701 Update to latest atomicpuppy
-fixup  664d934 Change ES url in jenkinsfile for test (#140)
-reword 1d04849 Adding operators.md for egidijus (#141)
-fixup  5a365c3 more truth in the readme
-pick   7e69788 Added nomad security group to redis security group (#142)
-reword 1c2b1d2 maybe when event consumer runs, evenstore is not running, so the acceptance tests fail, lets make eventstore a dependancy for eventconsumer
-squash 0ebdd5a maybe we will see what is running and what is not, because eventstore is allegedly down.
-pick   c6d376e Removed metrics, replaced with Striemann; made Jenkinsfile use make (#143)
+<span style="color:#00B9D7">pick<span>   <span style="color:#F7208B">508bea9</span> <span style="color: #82CDB9">Replacing orders stream with ce-order</span>
+<span style="color:#F37259">squash</span> <span style="color:#F7208B">7ba9da9</span> <span style="color: #82CDB9">Updated order_placed event reader to handle non-uk orders. lulz</span>
+<span style="color:#FDF5A9">fixup</span>  <span style="color:#F7208B">f63c701</span> <span style="color: #82CDB9">Update to latest atomicpuppy</span>
+<span style="color:#FDF5A9">fixup</span>  <span style="color:#F7208B">664d934</span> <span style="color: #82CDB9">Change ES url in jenkinsfile for test (#140)</span>
+<span style="color:#F7208B">reword</span> <span style="color:#F7208B">1d04849</span> <span style="color: #82CDB9">Adding operators.md for egidijus (#141)</span>
+<span style="color:#FDF5A9">fixup</span>  <span style="color:#F7208B">5a365c3</span> <span style="color: #82CDB9">more truth in the readme</span>
+<span style="color:#00B9D7">pick<span>   <span style="color:#F7208B">7e69788</span> <span style="color: #82CDB9">Added nomad security group to redis security group (#142)</span>
+<span style="color:#F7208B">reword</span> <span style="color:#F7208B">1c2b1d2</span> <span style="color: #82CDB9">maybe when event consumer runs, evenstore is not running, so the acceptance tests fail, lets make eventstore a dependancy for eventconsumer</span>
+<span style="color:#F37259">squash</span> <span style="color:#F7208B">0ebdd5a</span> <span style="color: #82CDB9">maybe we will see what is running and what is not, because eventstore is allegedly down.</span>
+<span style="color:#00B9D7">pick<span>   <span style="color:#F7208B">c6d376e</span> <span style="color: #82CDB9">Removed metrics, replaced with Striemann; made Jenkinsfile use make (#143)</span>
 
 # Rebase ca177fb..c6d376e onto ca177fb (10 commands)
 #
@@ -478,11 +478,10 @@ Dude, like I literally have no idea. What am I, psychic?
 
 ---
 
-class: fullscreen-image
+class: question
 background-image: url(images/basket-event-streams.svg)
 
-# Why can't our json blob help?
-
+# Spot the difference
 
 ???
 
@@ -901,6 +900,7 @@ Lastly there's a write_event method that adds a new event into our history. We s
 class: fullscreen-image
 background-image: url(images/eventsourcing-cycle.svg)
 
+.footnote[.light[See Jeremie Chassaing: https://bit.ly/2pykJ1w]]
 ???
 
 This is the most important slide. I stole this description from Jeremie Chassaing. You should watch his talks, he's smarter than I am, and more handsome, and French. When we're implementing eventsourcing, this is how it works. A request comes into the system - a command - we look at our current state to decide what to do, and when we've decided, we create a new event to record that decision.
@@ -1060,5 +1060,15 @@ EXPLAIN THE PANES!
 REMEMBER TO BREATHE!
 
 ---
-class: fullscreen-image
-background-image: url(images/codecamp-feedback.png)
+# questions?
+.feedback[
+![Code camp feedback](images/codecamp-feedback.png)
+]
+.footnote[
+.medium[
+        twitter: @bob_the_mighty]
+.medium[
+        blog: https://io.made.com]
+.medium[
+        slides+ code: https://www.github.com/bobthemighty/eventsourcing-101]
+]
