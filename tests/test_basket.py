@@ -11,7 +11,6 @@ class BasketTest:
     @property
     def event(self):
         assert len(self.basket.new_events) == 1, "Should have one new event"
-
         return self.basket.new_events[0]
 
     def has_event(self, cls):
@@ -30,7 +29,7 @@ class When_creating_a_new_basket(BasketTest):
         assert self.basket.is_empty()
 
     def it_should_raise_basket_created(self):
-        assert self.has_event(BasketCreated)
+        assert self.has_event(events.BasketCreated)
         assert self.event.basket_id == self.BASKET_ID
 
     def it_should_have_the_correct_basket_id(self):
@@ -40,16 +39,16 @@ class When_creating_a_new_basket(BasketTest):
 #class When_adding_a_new_item(BasketTest):
 #
 #    def given_an_empty_basket(self):
-#        self.basket = Basket([BasketCreated(self.BASKET_ID)])
+#        self.basket = Basket([events.BasketCreated(self.BASKET_ID)])
 #
 #    def because_we_add_a_product(self):
 #        self.basket.add_item("coffee", qty=3)
 #
 #    def it_should_contain_the_product(self):
-#        assert self.basket['coffee'] == 3, "Should contain 3 coffees"
+#        assert self.basket.get_item('coffee') == 3, "Should contain 3 coffees"
 #
 #    def it_should_raise_item_added(self):
-#        assert isinstance(self.event, ItemAdded)
+#        assert isinstance(self.event, events.ItemAdded)
 #        assert self.event.basket_id == self.BASKET_ID
 #        assert self.event.product == "coffee"
 #        assert self.event.qty == 3
@@ -76,7 +75,7 @@ class When_creating_a_new_basket(BasketTest):
 #        assert self.basket.is_empty()
 #
 #    def it_should_raise_item_removed(self):
-#        assert self.has_event(ItemRemoved)
+#        assert self.has_event(events.ItemRemoved)
 #        assert self.event.basket_id == self.BASKET_ID
 #        assert self.event.product == "apple"
 #

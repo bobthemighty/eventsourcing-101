@@ -15,10 +15,6 @@ client = MongoClient()
 db = client.basket_db
 
 
-class BasketCreated(NamedTuple):
-    basket_id: uuid.UUID
-
-
 class Basket(Aggregate):
 
     def __init__(self, events=None):
