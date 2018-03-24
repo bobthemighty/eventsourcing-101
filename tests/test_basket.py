@@ -57,11 +57,12 @@ class When_creating_a_new_basket(BasketTest):
 #
 #    def it_should_not_be_empty(self):
 #        assert not self.basket.is_empty()
-##
-#### # data access nao plz
-####
-###
-##
+#
+# data access nao plz
+#
+#
+#
+#
 #class When_removing_a_product(BasketTest):
 #
 #    def given_a_basket(self):
