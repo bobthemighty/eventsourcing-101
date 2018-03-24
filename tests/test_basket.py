@@ -39,7 +39,9 @@ class When_creating_a_new_basket(BasketTest):
 #class When_adding_a_new_item(BasketTest):
 #
 #    def given_an_empty_basket(self):
-#        self.basket = Basket([events.BasketCreated(self.BASKET_ID)])
+#        self.basket = Basket([
+#            events.BasketCreated(self.BASKET_ID)
+#        ])
 #
 #    def because_we_add_a_product(self):
 #        self.basket.add_item("coffee", qty=3)
