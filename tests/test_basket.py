@@ -57,17 +57,17 @@ class When_creating_a_new_basket(BasketTest):
 #
 #    def it_should_not_be_empty(self):
 #        assert not self.basket.is_empty()
-#
-### # data access nao plz
+##
+#### # data access nao plz
+####
 ###
 ##
-#
 #class When_removing_a_product(BasketTest):
 #
 #    def given_a_basket(self):
 #        self.basket = Basket([
-#            BasketCreated(self.BASKET_ID),
-#            ItemAdded(self.BASKET_ID, "apple", 2)
+#            events.BasketCreated(self.BASKET_ID),
+#            events.ItemAdded(self.BASKET_ID, "apple", 2)
 #        ])
 #
 #    def because_we_remove_an_item(self):
@@ -85,9 +85,10 @@ class When_creating_a_new_basket(BasketTest):
 #class When_removing_a_product_that_doesnt_exist(BasketTest):
 #
 #    def given_a_basket(self):
+#        self.exn = None
 #        self.basket = Basket([
-#            BasketCreated(self.BASKET_ID),
-#            ItemAdded(self.BASKET_ID, "apple", 1)
+#            events.BasketCreated(self.BASKET_ID),
+#            events.ItemAdded(self.BASKET_ID, "apple", 1)
 #        ])
 #
 #    def because_we_remove_an_item(self):
