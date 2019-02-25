@@ -1,6 +1,6 @@
 This repo contains the code samples and slides for my "Eventsouring 101" talk.
 
-There's a practice video of me mumbling and fumbling through it on [Youtube](https://www.youtube.com/watch?v=0l8vuYaaBU)
+There's a practice video of me mumbling and fumbling through it on [Youtube](https://www.youtube.com/watch?v=0l8vuYaaBUs)
 
 The master branch contains a simple shopping basket, with tests, that stores state in a mongo database.
 The "from_scratch" branch has the code in a state ready for the live code exercise.
