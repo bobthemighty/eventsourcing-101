@@ -55,4 +55,6 @@ def get(cls, basket_id):
     return Basket(read_events)
 ```
 
+IF you actually want to do Eventsourcing in the real world, then I don't recommend using Mongo - why not try out [Eventstore](https://eventstore.org/) with [Photon Pump](https://github.com/madedotcom/photon-pump)?
+
 The cli tool should then work on the from_scratch branch, too.
